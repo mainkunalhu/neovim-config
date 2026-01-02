@@ -17,3 +17,7 @@ vim.opt.smartindent = true
 -- Formatting and Linting --
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.lazyvim_eslint_auto_format = true
+
+-- Disable --
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
