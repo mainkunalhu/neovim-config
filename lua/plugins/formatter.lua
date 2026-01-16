@@ -8,6 +8,8 @@ return {
 			javascriptreact = { "prettier", "eslint_d" },
 			typescriptreact = { "prettier", "eslint_d" },
 			lua = { "stylua" },
+			markdown = { "prettier" },
+			mdx = { "prettier" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
