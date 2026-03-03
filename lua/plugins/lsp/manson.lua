@@ -33,21 +33,34 @@ return {
 				pyright = {},
 				gopls = {},
 				rust_analyzer = {},
-				tailwindcss = {},
+				tailwindcss = {
+					classFunctions = { "cva", "cx" },
+				},
 				html = {},
 				cssls = {},
+				ruff = {},
+				pylsp = {
+					settings = {
+						pylsp = {
+							plugins = {
+								jedi = { environment = "${workspaceFolder}/.venv" },
+								pycodestyle = { enabled = false },
+								pyflakes = { enabled = false },
+								mccabe = { enabled = false },
+							},
+						},
+					},
+				},
 			}
 
 			mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(servers) })
 
 			for server, config in pairs(servers) do
 				config.capabilities = capabilities
-				-- Modern 0.12/0.11 native enable
 				if vim.lsp.config then
 					vim.lsp.config(server, config)
 					vim.lsp.enable(server)
 				else
-					-- Fallback for older nvim-lspconfig versions
 					require("lspconfig")[server].setup(config)
 				end
 			end

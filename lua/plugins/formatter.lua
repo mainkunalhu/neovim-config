@@ -10,6 +10,7 @@ return {
 			lua = { "stylua" },
 			markdown = { "prettier" },
 			mdx = { "prettier" },
+			python = { "ruff_format", "ruff_fix" },
 		},
 		format_on_save = {
 			lsp_fallback = true,
